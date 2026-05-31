@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sky 的部落格</title>
+    <title>901 傳奇</title>
     <style>
         * {
             box-sizing: border-box;
@@ -27,7 +27,7 @@
             text-align: center;
             padding: 40px 20px;
             background: linear-gradient(rgba(80, 150, 210, 0.35), rgba(255, 255, 255, 0.7)),
-                url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80") center/cover;
+                url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80") center/cover;
         }
 
         .hero {
@@ -96,7 +96,7 @@
         }
 
         main {
-            width: min(1100px, 92%);
+            width: min(1200px, 92%);
             margin: 50px auto;
         }
 
@@ -121,7 +121,7 @@
 
         .posts {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 24px;
         }
 
@@ -140,9 +140,10 @@
 
         .post-card img {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
+            height: 210px;
+            object-fit: contain;
             display: block;
+            background: #f4f8fb;
         }
 
         .post-content {
@@ -198,6 +199,10 @@
             nav ul {
                 gap: 16px;
             }
+
+            .posts {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -205,76 +210,263 @@
 <body>
     <header id="home">
         <div class="hero">
-            <h1>Sky 的部落格</h1>
-            <p>記錄生活、學習、旅行與每一個值得收藏的瞬間。</p>
-            <a href="#posts">開始閱讀</a>
+            <h1>901傳奇 </h1>
+            <p>記錄桃園市桃園區經國國中 901 班的每一位成員與共同回憶。</p>
+            <a href="#members">認識成員</a>
         </div>
     </header>
 
     <nav>
         <ul>
             <li><a href="#home">首頁</a></li>
-            <li><a href="#about">關於 Sky</a></li>
-            <li><a href="#posts">文章</a></li>
+            <li><a href="#about">關於 901</a></li>
+            <li><a href="#members">班級成員</a></li>
             <li><a href="#contact">聯絡</a></li>
         </ul>
     </nav>
 
     <main>
         <section id="about">
-            <h2 class="section-title">關於 Sky</h2>
+            <h2 class="section-title">關於 901 班</h2>
             <div class="about">
                 <p>
-                    嗨，我是 Sky。這裡是我的個人部落格，我會在這裡分享生活觀察、學習筆記、旅行回憶，
-                    也記錄一些平常突然想到的小故事。希望這個地方像天空一樣自由，也像日記一樣真實。
+                    大家好，我是謝翰燊，這是桃園市桃園區經國國中 901 班的班級成員介紹網站，
+                    這裡會放上 25 位同學的照片、座號、姓名與簡短介紹，記錄屬於 901 的日常與回憶。
                 </p>
             </div>
         </section>
 
-        <section id="posts">
-            <h2 class="section-title">最新文章</h2>
+        <section id="members">
+            <h2 class="section-title">班級成員介紹</h2>
             <div class="posts">
                 <article class="post-card">
-                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80"
-                        alt="書桌與筆記本" />
+                    <img src="p1.jpg" alt="1號 第 1 號同學">
                     <div class="post-content">
-                        <span>生活</span>
-                        <h3>開始寫部落格的第一天</h3>
-                        <p>今天決定開始整理自己的想法，把生活中的小事慢慢寫下來。</p>
+                        <span>1號</span>
+                        <h3>第 1 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                     </div>
                 </article>
 
                 <article class="post-card">
-                    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80"
-                        alt="旅行風景" />
+                    <img src="p3.jpg" alt="3號 第 3 號同學">
                     <div class="post-content">
-                        <span>旅行</span>
-                        <h3>想去看海的午後</h3>
-                        <p>有時候只是想離開熟悉的地方，去聽海浪、看天空，讓心情重新整理。</p>
+                        <span>3號</span>
+                        <h3>第 3 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                     </div>
                 </article>
 
                 <article class="post-card">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
-                        alt="筆電工作畫面" />
+                    <img src="p4.jpg" alt="4號 第 4 號同學">
                     <div class="post-content">
-                        <span>學習</span>
-                        <h3>今天學到的一件事</h3>
-                        <p>把每天學到的內容寫下來，就算只有一點點，也會慢慢變成自己的力量。</p>
+                        <span>4號</span>
+                        <h3>第 4 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                     </div>
                 </article>
+
+                <article class="post-card">
+                    <img src="p5.jpg" alt="5號 第 5 號同學">
+                    <div class="post-content">
+                        <span>5號</span>
+                        <h3>第 5 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p6.jpg" alt="6號 第 6 號同學">
+                    <div class="post-content">
+                        <span>6號</span>
+                        <h3>第 6 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p7.jpg" alt="7號 第 7 號同學">
+                    <div class="post-content">
+                        <span>7號</span>
+                        <h3>第 7 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p8.jpg" alt="8號 曾梓豪（小球球）">
+                    <div class="post-content">
+                        <span>8號</span>
+                        <h3>曾梓豪（小球球）</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p9.jpg" alt="9號 第 9 號同學">
+                    <div class="post-content">
+                        <span>9號</span>
+                        <h3>第 9 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p10.jpg" alt="10號 第 10 號同學">
+                    <div class="post-content">
+                        <span>10號</span>
+                        <h3>第 10 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p11.jpg" alt="11號 第 11 號同學">
+                    <div class="post-content">
+                        <span>11號</span>
+                        <h3>第 11 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p12.jpg" alt="12號 第 12 號同學">
+                    <div class="post-content">
+                        <span>12號</span>
+                        <h3>第 12 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p13.jpg" alt="13號 第 13 號同學">
+                    <div class="post-content">
+                        <span>13號</span>
+                        <h3>第 13 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p14.jpg" alt="14號 第 14 號同學">
+                    <div class="post-content">
+                        <span>14號</span>
+                        <h3>第 14 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p15.jpg" alt="15號 第 15 號同學">
+                    <div class="post-content">
+                        <span>15號</span>
+                        <h3>第 15 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p16.jpg" alt="16號 第 16 號同學">
+                    <div class="post-content">
+                        <span>16號</span>
+                        <h3>第 16 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p17.jpg" alt="17號 第 17 號同學">
+                    <div class="post-content">
+                        <span>17號</span>
+                        <h3>第 17 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p18.jpg" alt="18號 第 18 號同學">
+                    <div class="post-content">
+                        <span>18號</span>
+                        <h3>第 18 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p19.jpg" alt="19號 第 19 號同學">
+                    <div class="post-content">
+                        <span>19號</span>
+                        <h3>第 19 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p20.jpg" alt="20號 第 20 號同學">
+                    <div class="post-content">
+                        <span>20號</span>
+                        <h3>第 20 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p21.jpg" alt="21號 第 21 號同學">
+                    <div class="post-content">
+                        <span>21號</span>
+                        <h3>第 21 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p22.jpg" alt="22號 第 22 號同學">
+                    <div class="post-content">
+                        <span>22號</span>
+                        <h3>第 22 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p23.jpg" alt="23號 第 23 號同學">
+                    <div class="post-content">
+                        <span>23號</span>
+                        <h3>第 23 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p24.jpg" alt="24號 第 24 號同學">
+                    <div class="post-content">
+                        <span>24號</span>
+                        <h3>第 24 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="p25.jpg" alt="25號 第 25 號同學">
+                    <div class="post-content">
+                        <span>25號</span>
+                        <h3>第 25 號同學</h3>
+                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                    </div>
+                </article>
+
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2>聯絡 Sky</h2>
-            <p>有想法、合作或只是想打聲招呼，都歡迎留言給我。</p>
+            <h2>聯絡 901</h2>
+            <p>有想補充的成員介紹、照片或班級回憶，都可以再更新到這個網站。</p>
             <p>Email：wy20110203@gmail.com</p>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Sky 的部落格. All rights reserved.</p>
+        <p>© 2026 經國國中 901 班級成員介紹. All rights reserved.</p>
     </footer>
 </body>
 
