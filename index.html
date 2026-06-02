@@ -966,6 +966,257 @@
         }
 
 
+        /* ===== 戰隊出任務：升級版霓虹戰報風格 ===== */
+        #mission-page {
+            position: relative;
+        }
+
+        #mission-page::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            background:
+                radial-gradient(circle at 15% 18%, rgba(77, 246, 255, 0.16), transparent 26%),
+                radial-gradient(circle at 85% 22%, rgba(255, 88, 200, 0.14), transparent 24%),
+                linear-gradient(120deg, transparent 0 48%, rgba(77, 246, 255, 0.05) 49%, transparent 51% 100%);
+            z-index: -1;
+        }
+
+        #mission-page.active::before {
+            opacity: 1;
+        }
+
+        #mission-page .section-title {
+            text-shadow:
+                0 0 14px rgba(77, 246, 255, 0.25),
+                0 0 26px rgba(255, 88, 200, 0.14);
+        }
+
+        .mission-hero {
+            isolation: isolate;
+            border-color: rgba(77, 246, 255, 0.42);
+            background:
+                linear-gradient(135deg, rgba(77, 246, 255, 0.16), rgba(255, 88, 200, 0.16)),
+                radial-gradient(circle at 18% 18%, rgba(255, 216, 77, 0.16), transparent 20%),
+                radial-gradient(circle at 85% 88%, rgba(141, 91, 255, 0.32), transparent 24%),
+                rgba(5, 13, 27, 0.9);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+                0 0 32px rgba(77, 246, 255, 0.2),
+                0 0 70px rgba(255, 88, 200, 0.12);
+        }
+
+        .mission-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background:
+                linear-gradient(90deg, transparent, rgba(77, 246, 255, 0.12), transparent),
+                repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 10px);
+            transform: translateX(-100%);
+            animation: missionScan 4.8s linear infinite;
+            opacity: 0.65;
+        }
+
+        @keyframes missionScan {
+            0% { transform: translateX(-100%); }
+            45%, 100% { transform: translateX(100%); }
+        }
+
+        .mission-hero h2 {
+            background: linear-gradient(90deg, #ffffff, var(--cyan), var(--yellow), var(--pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 14px rgba(77, 246, 255, 0.25));
+        }
+
+        .mission-kicker {
+            box-shadow:
+                0 0 12px rgba(77, 246, 255, 0.34),
+                0 0 26px rgba(255, 216, 77, 0.16);
+        }
+
+        .mission-tabs {
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        }
+
+        .mission-tab {
+            position: relative;
+            overflow: hidden;
+            min-height: 116px;
+            background:
+                linear-gradient(145deg, rgba(77, 246, 255, 0.11), rgba(255, 88, 200, 0.08)),
+                rgba(255, 255, 255, 0.055);
+            box-shadow: 0 0 22px rgba(77, 246, 255, 0.07);
+        }
+
+        .mission-tab::after {
+            content: "";
+            position: absolute;
+            left: -40%;
+            top: -60%;
+            width: 80%;
+            height: 220%;
+            transform: rotate(22deg);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+            transition: 0.45s ease;
+        }
+
+        .mission-tab:hover::after {
+            left: 110%;
+        }
+
+        .memory-card {
+            border-color: rgba(77, 246, 255, 0.24);
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.24),
+                0 0 22px rgba(77, 246, 255, 0.06);
+        }
+
+        .memory-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(135deg, rgba(77, 246, 255, 0.12), transparent 42%, rgba(255, 88, 200, 0.12)),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05), transparent 18% 82%, rgba(255, 255, 255, 0.05));
+            z-index: 1;
+        }
+
+        .memory-photo,
+        .memory-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .volley-panel {
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 24px;
+            align-items: center;
+            border-color: rgba(255, 216, 77, 0.34);
+            background:
+                radial-gradient(circle at 15% 12%, rgba(255, 216, 77, 0.16), transparent 22%),
+                radial-gradient(circle at 82% 80%, rgba(77, 246, 255, 0.16), transparent 25%),
+                linear-gradient(135deg, rgba(12, 24, 44, 0.94), rgba(20, 12, 42, 0.92));
+        }
+
+        .volley-panel::before {
+            content: "VOLLEYBALL";
+            position: absolute;
+            right: -14px;
+            bottom: -22px;
+            font-size: clamp(2.8rem, 10vw, 7.4rem);
+            font-weight: 900;
+            letter-spacing: 6px;
+            color: rgba(255, 255, 255, 0.04);
+            line-height: 1;
+        }
+
+        .volley-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .volley-info .mission-kicker {
+            margin-bottom: 14px;
+        }
+
+        .volley-info h3 {
+            font-size: clamp(1.8rem, 4vw, 3.2rem);
+            line-height: 1.18;
+            margin-bottom: 12px;
+            color: #fff;
+            text-shadow: 0 0 18px rgba(255, 216, 77, 0.18);
+        }
+
+        .volley-info p {
+            color: #d5e6f7;
+            margin-bottom: 18px;
+        }
+
+        .volley-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .volley-tags span {
+            padding: 8px 13px;
+            border-radius: 999px;
+            font-weight: 800;
+            color: #08111f;
+            background: linear-gradient(90deg, var(--yellow), var(--cyan));
+            box-shadow: 0 0 14px rgba(77, 246, 255, 0.14);
+        }
+
+        .volley-photo-card {
+            position: relative;
+            z-index: 1;
+            border-radius: 26px;
+            padding: 12px;
+            background:
+                linear-gradient(135deg, rgba(77, 246, 255, 0.32), rgba(255, 216, 77, 0.28), rgba(255, 88, 200, 0.28));
+            box-shadow: 0 0 32px rgba(77, 246, 255, 0.16);
+        }
+
+        .volley-photo-card img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+            border-radius: 18px;
+            background:
+                radial-gradient(circle at center, rgba(255, 216, 77, 0.18), transparent 30%),
+                #101a30;
+        }
+
+        .score-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .score-item {
+            padding: 14px 10px;
+            border-radius: 18px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.065);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .score-item strong {
+            display: block;
+            color: var(--yellow);
+            font-size: 1.35rem;
+        }
+
+        .score-item span {
+            color: var(--sub);
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 900px) {
+            .volley-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .score-board {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
         .contact {
             text-align: center;
         }
@@ -1060,8 +1311,8 @@
                 血月升起，戰鼓響起，每一位同學都是隊伍中不可缺少的一員，一起學習、一起成長、一起寫下最熱血的青春篇章。
             </p>
             <div class="hero-buttons">
-                <a class="btn-primary" href="#members">查看戰隊成員</a>
-                <a class="btn-secondary" href="#about">認識 901</a>
+                <a class="btn-primary" href="#members" data-page="class" data-target="#members">查看戰隊成員</a>
+                <a class="btn-secondary" href="#about" data-page="class" data-target="#about">認識 901</a>
                 <button class="page-switch-btn" type="button" data-page="mission">戰隊出任務</button>
             </div>
             <div class="hero-stats">
@@ -1084,11 +1335,11 @@
     <nav>
         <ul>
             <li><a href="#home" data-page="class">首頁</a></li>
-            <li><a href="#about">關於 901</a></li>
-            <li><a href="#leader">戰隊 Leader</a></li>
-            <li><a href="#members">戰隊成員</a></li>
+            <li><a href="#about" data-page="class" data-target="#about">關於 901</a></li>
+            <li><a href="#leader" data-page="class" data-target="#leader">戰隊 Leader</a></li>
+            <li><a href="#members" data-page="class" data-target="#members">戰隊成員</a></li>
             <li><a href="#mission" data-page="mission">戰隊出任務</a></li>
-            <li><a href="#contact">聯絡</a></li>
+            <li><a href="#contact" data-page="class" data-target="#contact">聯絡</a></li>
         </ul>
     </nav>
 
@@ -1391,7 +1642,37 @@
                         <div class="mission-tab"><strong>01</strong><span>集合出發，任務開始</span></div>
                         <div class="mission-tab"><strong>02</strong><span>景點攻略，留下合照</span></div>
                         <div class="mission-tab"><strong>03</strong><span>夜晚回憶，笑到沒電</span></div>
-                        <div class="mission-tab"><strong>04</strong><span>回程存檔，青春不散場</span></div>
+                        <div class="mission-tab"><strong>04</strong><span>班際排球，熱血開戰</span></div>
+                        <div class="mission-tab"><strong>05</strong><span>回程存檔，青春不散場</span></div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="mission-volleyball">
+                <h2 class="section-title">班際排球｜熱血支線任務</h2>
+                <div class="glass-panel volley-panel">
+                    <div class="volley-info">
+                        <span class="mission-kicker">SIDE QUEST • CLASS VOLLEYBALL</span>
+                        <h3>球一拋起，901 全員進入戰鬥模式</h3>
+                        <p>
+                            班際排球是 901 的熱血支線任務。場上有人負責接球、有人負責攻擊、有人在旁邊加油到破音，
+                            不管最後比分如何，最帥的是大家一起上場、一起喊聲、一起把氣勢打出來。
+                        </p>
+                        <div class="volley-tags">
+                            <span>團隊默契</span>
+                            <span>熱血應援</span>
+                            <span>班級榮耀</span>
+                            <span>901 出擊</span>
+                        </div>
+                        <div class="score-board">
+                            <div class="score-item"><strong>READY</strong><span>賽前集結</span></div>
+                            <div class="score-item"><strong>ATTACK</strong><span>全力進攻</span></div>
+                            <div class="score-item"><strong>WIN</strong><span>回憶勝利</span></div>
+                        </div>
+                    </div>
+                    <div class="volley-photo-card">
+                        <img src="volleyball.jpg" alt="901 班際排球照片" onerror="this.style.opacity='0.18'">
                     </div>
                 </div>
             </section>
@@ -1432,6 +1713,14 @@
                         </div>
                     </article>
                     <article class="memory-card">
+                        <div class="memory-photo"><img src="volleyball.jpg" alt="班際排球照片" onerror="this.style.display='none'"></div>
+                        <div class="memory-content">
+                            <span class="tag">VOLLEYBALL</span>
+                            <h3>班際排球熱血開戰</h3>
+                            <p>放比賽合照、場上接球、扣球、應援或賽後大合照。</p>
+                        </div>
+                    </article>
+                    <article class="memory-card">
                         <div class="memory-photo"><img src="trip5.jpg" alt="畢業旅行照片 5" onerror="this.style.display='none'"></div>
                         <div class="memory-content">
                             <span class="tag">BONUS</span>
@@ -1468,6 +1757,13 @@
                         </div>
                     </div>
                     <div class="timeline-item">
+                        <div class="timeline-time">SIDE</div>
+                        <div class="timeline-box">
+                            <h3>班際排球開戰</h3>
+                            <p>這不是普通比賽，是 901 的團隊默契測試。有人救球、有人得分、有人負責把氣氛拉滿。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
                         <div class="timeline-time">DAY 3</div>
                         <div class="timeline-box">
                             <h3>最終回憶存檔</h3>
@@ -1499,22 +1795,31 @@
         const classPage = document.getElementById("class-page");
         const missionPage = document.getElementById("mission-page");
 
-        function switchPage(page) {
+        function switchPage(page, targetHash = "") {
             const showMission = page === "mission";
             classPage.classList.toggle("active", !showMission);
             missionPage.classList.toggle("active", showMission);
 
             document.querySelectorAll("nav a[data-page]").forEach((link) => {
-                link.classList.toggle("active-nav", link.dataset.page === page);
+                const target = link.dataset.target || link.getAttribute("href") || "";
+                const shouldActive =
+                    link.dataset.page === page &&
+                    (!targetHash || target === targetHash || (page === "mission" && target === "#mission"));
+                link.classList.toggle("active-nav", shouldActive);
             });
 
-            if (showMission) {
-                history.replaceState(null, "", "#mission");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            } else {
-                history.replaceState(null, "", "#home");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            }
+            const fallbackHash = showMission ? "#mission" : "#home";
+            const finalHash = targetHash || fallbackHash;
+            history.replaceState(null, "", finalHash);
+
+            requestAnimationFrame(() => {
+                const targetEl = document.querySelector(finalHash);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                } else {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+            });
         }
 
         pageButtons.forEach((btn) => {
@@ -1522,12 +1827,16 @@
                 const page = btn.dataset.page;
                 if (!page) return;
                 e.preventDefault();
-                switchPage(page);
+
+                const targetHash = btn.dataset.target || btn.getAttribute("href") || "";
+                switchPage(page, targetHash && targetHash.startsWith("#") ? targetHash : "");
             });
         });
 
         if (location.hash === "#mission" || location.hash.startsWith("#mission-")) {
-            switchPage("mission");
+            switchPage("mission", location.hash);
+        } else if (location.hash && document.querySelector(location.hash)) {
+            switchPage("class", location.hash);
         } else {
             document.querySelector('nav a[data-page="class"]')?.classList.add("active-nav");
         }
