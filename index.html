@@ -354,15 +354,61 @@
                 0 0 28px rgba(77, 246, 255, 0.12);
         }
 
-        .post-card img {
+        .carousel {
+            position: relative;
+            z-index: 1;
             width: calc(100% - 20px);
-            margin: 10px auto 0;
             height: 210px;
-            object-fit: contain;
-            display: block;
-            background: linear-gradient(135deg, #e8f7ff, #d9edff);
+            margin: 10px auto 0;
+            overflow: hidden;
             border-radius: 16px;
+            background: linear-gradient(135deg, #e8f7ff, #d9edff);
             border: 1px solid rgba(77, 246, 255, 0.12);
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            transition: transform 0.45s ease;
+        }
+
+        .carousel img {
+            width: 50%;
+            height: 100%;
+            object-fit: contain;
+            flex-shrink: 0;
+            display: block;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            left: 50%;
+            bottom: 8px;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 3;
+            padding: 5px 8px;
+            border-radius: 999px;
+            background: rgba(8, 17, 31, 0.45);
+            backdrop-filter: blur(6px);
+        }
+
+        .carousel-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--cyan);
+            box-shadow: 0 0 8px rgba(77, 246, 255, 0.7);
+            transform: scale(1.25);
         }
 
         .post-content {
@@ -489,6 +535,10 @@
             .posts {
                 grid-template-columns: 1fr;
             }
+
+            .carousel {
+                height: 240px;
+            }
         }
     </style>
 </head>
@@ -613,6 +663,53 @@
     <footer>
         <p>© 2026 經國國中 901 班級成員介紹 • E-SPORTS STYLE EDITION</p>
     </footer>
+
+    <script>
+        document.querySelectorAll(".post-card > img").forEach((oldImg) => {
+            const originalSrc = oldImg.getAttribute("src");
+            const altText = oldImg.getAttribute("alt") || "";
+
+            const secondSrc = originalSrc.replace(".jpg", "-2.jpg");
+
+            const carousel = document.createElement("div");
+            carousel.className = "carousel";
+            carousel.dataset.index = "0";
+
+            carousel.innerHTML = `
+                <div class="carousel-track">
+                    <img src="${originalSrc}" alt="${altText} 第一張照片">
+                    <img src="${secondSrc}" alt="${altText} 第二張照片" onerror="this.src='${originalSrc}'">
+                </div>
+
+                <div class="carousel-dots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                </div>
+            `;
+
+            oldImg.replaceWith(carousel);
+        });
+
+        document.querySelectorAll(".carousel").forEach((carousel) => {
+            const track = carousel.querySelector(".carousel-track");
+            const dots = carousel.querySelectorAll(".carousel-dot");
+
+            function updateCarousel(index) {
+                carousel.dataset.index = index;
+                track.style.transform = `translateX(-${index * 50}%)`;
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle("active", i === index);
+                });
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => {
+                    updateCarousel(index);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
