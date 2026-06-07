@@ -876,6 +876,21 @@
             object-fit: cover;
         }
 
+
+        /* ===== 戰隊出任務：團體照完整顯示 ===== */
+        #mission-group-photos .memory-photo {
+            height: 260px;
+            background:
+                radial-gradient(circle at center, rgba(77, 246, 255, 0.14), transparent 30%),
+                linear-gradient(135deg, rgba(77, 246, 255, 0.18), rgba(255, 88, 200, 0.16)),
+                #08111f;
+        }
+
+        #mission-group-photos .memory-photo img {
+            object-fit: contain;
+            padding: 6px;
+        }
+
         .memory-content {
             padding: 18px 18px 22px;
         }
@@ -1660,7 +1675,8 @@
                         把每張照片都當成一個關卡，把每段回憶都收進 901 的青春檔案庫。
                     </p>
                     <div class="mission-actions">
-                        <!-- <a class="btn-primary" href="#mission-photos">查看任務照片</a> -->
+                        <a class="btn-primary" href="#mission-group-photos">查看團體照</a>
+                        <a class="btn-secondary" href="#mission-photos">查看任務照片牆</a>
                         <button class="btn-secondary page-switch-btn" type="button" data-page="class">返回 901 首頁</button>
                     </div>
                     <div class="mission-tabs">
@@ -1699,6 +1715,53 @@
                     <div class="volley-photo-card">
                         <img src="volleyball.jpg" alt="901 班際排球照片" onerror="this.style.opacity='0.18'">
                     </div>
+                </div>
+            </section>
+
+
+            <section id="mission-group-photos">
+                <h2 class="section-title">團體照任務存檔</h2>
+                <div class="memory-grid">
+                    <article class="memory-card">
+                        <div class="memory-photo">
+                            <img src="sing-1.jpg" alt="901 英語歌謠比賽團體照" onerror="this.style.display='none'">
+                        </div>
+                        <div class="memory-content">
+                            <span class="tag">SINGING QUEST</span>
+                            <h3>英語歌謠比賽</h3>
+                            <p>全班一起站上舞台，把練習的默契唱出來，留下 901 最有聲音的回憶。</p>
+                        </div>
+                    </article>
+                    <article class="memory-card">
+                        <div class="memory-photo">
+                            <img src="team-1.jpg" alt="901 Judy 生日團體照" onerror="this.style.display='none'">
+                        </div>
+                        <div class="memory-content">
+                            <span class="tag">BIRTHDAY QUEST</span>
+                            <h3>Judy 生日</h3>
+                            <p>把祝福、笑聲和大家聚在一起的瞬間存檔，這就是 901 的生日任務。</p>
+                        </div>
+                    </article>
+                    <article class="memory-card">
+                        <div class="memory-photo">
+                            <img src="team-2.jpg" alt="901 七上運動會團體照" onerror="this.style.display='none'">
+                        </div>
+                        <div class="memory-content">
+                            <span class="tag">SPORTS DAY</span>
+                            <h3>7 上運動會</h3>
+                            <p>操場上的加油聲、奔跑和汗水，都是 901 團隊能量爆發的證明。</p>
+                        </div>
+                    </article>
+                    <article class="memory-card">
+                        <div class="memory-photo">
+                            <img src="team-3.jpg" alt="901 七上運動會結束團體合照" onerror="this.style.display='none'">
+                        </div>
+                        <div class="memory-content">
+                            <span class="tag">TEAM SAVE</span>
+                            <h3>7 上運動會結束團體合照</h3>
+                            <p>比賽結束後的合照，是努力過後最帥的存檔畫面。</p>
+                        </div>
+                    </article>
                 </div>
             </section>
 
