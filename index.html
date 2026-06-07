@@ -529,35 +529,30 @@
                     transparent 0 18%,
                     rgba(255, 40, 70, 0.9) 19%,
                     rgba(110, 0, 18, 0.95) 20%,
-                    transparent 22% 100%
-                ),
+                    transparent 22% 100%),
 
                 linear-gradient(116deg,
                     transparent 0 38%,
                     rgba(230, 20, 48, 0.78) 39%,
                     rgba(95, 0, 16, 0.85) 40%,
-                    transparent 42% 100%
-                ),
+                    transparent 42% 100%),
 
                 linear-gradient(142deg,
                     transparent 0 62%,
                     rgba(255, 55, 82, 0.7) 63%,
                     rgba(120, 0, 18, 0.8) 64%,
-                    transparent 66% 100%
-                ),
+                    transparent 66% 100%),
 
                 /* 細碎血痕 */
                 linear-gradient(25deg,
                     transparent 0 28%,
                     rgba(170, 0, 26, 0.55) 29%,
-                    transparent 31% 100%
-                ),
+                    transparent 31% 100%),
 
                 linear-gradient(75deg,
                     transparent 0 74%,
                     rgba(255, 45, 75, 0.48) 75%,
-                    transparent 77% 100%
-                ),
+                    transparent 77% 100%),
 
                 /* 小血點 */
                 radial-gradient(circle at 21% 62%, rgba(255, 35, 65, 0.95) 0 3px, transparent 4px),
@@ -567,6 +562,7 @@
             mix-blend-mode: screen;
             filter: drop-shadow(0 0 5px rgba(255, 30, 60, 0.35));
         }
+
         .blood-church {
             position: relative;
             overflow: hidden;
@@ -721,6 +717,7 @@
                 opacity: 0;
                 transform: translateY(14px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1024,8 +1021,14 @@
         }
 
         @keyframes missionScan {
-            0% { transform: translateX(-100%); }
-            45%, 100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            45%,
+            100% {
+                transform: translateX(100%);
+            }
         }
 
         .mission-hero h2 {
@@ -1298,6 +1301,26 @@
                 height: 240px;
             }
         }
+
+        /* ===== 照片防下載保護：不影響版面 ===== */
+        img,
+        .carousel,
+        .memory-photo,
+        .volley-photo-card,
+        .leader-photo-wrap {
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+        }
+
+        img {
+            pointer-events: none;
+        }
+
+        .carousel-dot {
+            pointer-events: auto;
+        }
     </style>
 </head>
 
@@ -1345,283 +1368,285 @@
 
     <main>
         <div id="class-page" class="site-page active">
-        <section id="about">
-            <h2 class="section-title">關於 901 戰隊</h2>
-            <div class="about-grid">
-                <div class="glass-panel about blood-church">
-                    <p>
-                        大家好，我是謝翰燊，這是桃園市桃園區經國國中 901 班的班級成員介紹網站。
-                        這裡收錄了 25 位同學的照片、座號、姓名與簡短介紹，
-                        用電競戰隊風格來呈現 901 的活力、默契與團結。
-                    </p>
-                    <div class="quick-info">
-                        <span>班級主題：熱血 × 團結 × 青春</span>
-                        <span>25 位成員介紹</span>
+            <section id="about">
+                <h2 class="section-title">關於 901 戰隊</h2>
+                <div class="about-grid">
+                    <div class="glass-panel about blood-church">
+                        <p>
+                            大家好，我是謝翰燊，這是桃園市桃園區經國國中 901 班的班級成員介紹網站。
+                            這裡收錄了 25 位同學的照片、座號、姓名與簡短介紹，
+                            用電競戰隊風格來呈現 901 的活力、默契與團結。
+                        </p>
+                        <div class="quick-info">
+                            <span>班級主題：熱血 × 團結 × 青春</span>
+                            <span>25 位成員介紹</span>
+                        </div>
+                        <div class="blood-badge">BLOOD CHURCH MODE</div>
                     </div>
-                    <div class="blood-badge">BLOOD CHURCH MODE</div>
+                    <div class="glass-panel motto">
+                        <div class="motto-title">TEAM MOTTO</div>
+                        <div class="motto-text">一起拚、一起笑、<br>一起成為最強的 901！</div>
+                    </div>
                 </div>
-                <div class="glass-panel motto">
-                    <div class="motto-title">TEAM MOTTO</div>
-                    <div class="motto-text">一起拚、一起笑、<br>一起成為最強的 901！</div>
-                </div>
-            </div>
-        </section>
+            </section>
 
 
-        <section id="leader">
-            <h2 class="section-title">901 戰隊 Leader</h2>
-            <div class="glass-panel leader-panel">
-                <div class="leader-photo-wrap">
-                    <img class="leader-photo" src="teacher.jpg" alt="901 戰隊 Leader 班導照片">
-                    <div class="leader-label">CLASS LEADER</div>
-                </div>
-                <div class="leader-info">
-                    <div class="eyebrow">901 COMMAND CENTER</div>
-                    <h3>班導老師｜901 戰隊 Leader</h3>
-                    <p>
-                        在 901 這支戰隊裡，班導就是負責掌握節奏、穩定軍心、帶領大家前進的 Leader。
-                        不只是在課業上提醒我們，也在班級生活中陪著大家解決問題、凝聚團隊默契。
-                    </p>
-                    <p>
-                        當大家迷路時，Leader 負責指路；當大家累了時，Leader 給我們力量。
-                        901 的每一次成長、每一次團結，都少不了班導在背後的守護與帶領。
-                    </p>
-                    <div class="leader-tags">
-                        <span>戰隊指揮官</span>
-                        <span>班級守護者</span>
-                        <span>團結核心</span>
-                        <span>901 精神領袖</span>
+            <section id="leader">
+                <h2 class="section-title">901 戰隊 Leader</h2>
+                <div class="glass-panel leader-panel">
+                    <div class="leader-photo-wrap">
+                        <img class="leader-photo" src="teacher.jpg" alt="901 戰隊 Leader 班導照片">
+                        <div class="leader-label">CLASS LEADER</div>
+                    </div>
+                    <div class="leader-info">
+                        <div class="eyebrow">901 COMMAND CENTER</div>
+                        <h3>班導老師｜901 戰隊 Leader</h3>
+                        <p>
+                            在 901 這支戰隊裡，班導就是負責掌握節奏、穩定軍心、帶領大家前進的 Leader。
+                            不只是在課業上提醒我們，也在班級生活中陪著大家解決問題、凝聚團隊默契。
+                        </p>
+                        <p>
+                            當大家迷路時，Leader 負責指路；當大家累了時，Leader 給我們力量。
+                            901 的每一次成長、每一次團結，都少不了班導在背後的守護與帶領。
+                        </p>
+                        <div class="leader-tags">
+                            <span>戰隊指揮官</span>
+                            <span>班級守護者</span>
+                            <span>團結核心</span>
+                            <span>901 精神領袖</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="members">
-            <h2 class="section-title">901 戰隊成員</h2>
-            <div class="team-banner">
-                <div class="team-box">
-                    <strong>25</strong>
-                    <span>成員一起上場</span>
+            <section id="members">
+                <h2 class="section-title">901 戰隊成員</h2>
+                <div class="team-banner">
+                    <div class="team-box">
+                        <strong>25</strong>
+                        <span>成員一起上場</span>
+                    </div>
+                    <div class="team-box">
+                        <strong>TEAM 901</strong>
+                        <span>每個人都很重要</span>
+                    </div>
+                    <div class="team-box">
+                        <strong>GO WIN</strong>
+                        <span>向回憶與未來前進</span>
+                    </div>
                 </div>
-                <div class="team-box">
-                    <strong>TEAM 901</strong>
-                    <span>每個人都很重要</span>
-                </div>
-                <div class="team-box">
-                    <strong>GO WIN</strong>
-                    <span>向回憶與未來前進</span>
-                </div>
-            </div>
 
-            <div class="posts">
-                <article class="post-card"><img src="p1.jpg" alt="1號 井上翔樹(䒕䢞䢞)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">1號</span><span class="role-chip">TEAM MEMBER</span>
+                <div class="posts">
+                    <article class="post-card"><img src="p1.jpg" alt="1號 井上翔樹(䒕䢞䢞)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">1號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>井上翔樹(䒕䢞䢞)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>井上翔樹(䒕䢞䢞)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p3.jpg" alt="3號 呂羅文(蜜娜)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">3號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p3.jpg" alt="3號 呂羅文(蜜娜)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">3號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>呂羅文(蜜娜)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>呂羅文(蜜娜)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p4.jpg" alt="4號 李柏霆(格斯)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">4號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p4.jpg" alt="4號 李柏霆(格斯)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">4號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>李柏霆(格斯)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>李柏霆(格斯)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p5.jpg" alt="5號 張志翔(Boss)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">5號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p5.jpg" alt="5號 張志翔(Boss)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">5號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>張志翔(Boss)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>張志翔(Boss)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p6.jpg" alt="6號 第 6 號同學(小草莓🍓)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">6號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p6.jpg" alt="6號 第 6 號同學(小草莓🍓)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">6號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>陳以俊(小草莓🍓)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>陳以俊(小草莓🍓)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p7.jpg" alt="7號 第 7 號同學(河童)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">7號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p7.jpg" alt="7號 第 7 號同學(河童)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">7號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>陳宇澤(河童)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>陳宇澤(河童)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p8.jpg" alt="8號 曾梓豪(小球球)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">8號</span><span class="role-chip">ACE PLAYER</span></div>
-                        <h3>曾梓豪(小球球)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p9.jpg" alt="9號 第 9 號同學(蓋瑞)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">9號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p8.jpg" alt="8號 曾梓豪(小球球)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">8號</span><span class="role-chip">ACE PLAYER</span>
+                            </div>
+                            <h3>曾梓豪(小球球)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>黃騰彥(蓋瑞)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p10.jpg" alt="10號 第 10 號同學(小方糖)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">10號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p9.jpg" alt="9號 第 9 號同學(蓋瑞)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">9號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>黃騰彥(蓋瑞)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>鄒昊恩(小方糖)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p11.jpg" alt="11號 第 11 號同學(賴瑞哥哥)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">11號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p10.jpg" alt="10號 第 10 號同學(小方糖)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">10號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>鄒昊恩(小方糖)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>歐彥聖(賴瑞哥哥)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p12.jpg" alt="12號 第 12 號同學(蜘蛛)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">12號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p11.jpg" alt="11號 第 11 號同學(賴瑞哥哥)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">11號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>歐彥聖(賴瑞哥哥)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>鄭柏彥(蜘蛛)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p13.jpg" alt="13號 謝翰燊(里昂)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">13號</span><span class="role-chip">TACTICIAN</span></div>
-                        <h3>謝翰燊(里昂)</h3>
-                        <p>安靜內向的小伙子，做事都很緩慢，沉浸在自己的世界裡。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p14.jpg" alt="14號 第 14 號同學(莉莉)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">14號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p12.jpg" alt="12號 第 12 號同學(蜘蛛)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">12號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>鄭柏彥(蜘蛛)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>蕭維裕(莉莉)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p26.jpg" alt="26號 第 26 號同學(史派克)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">26號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p13.jpg" alt="13號 謝翰燊(里昂)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">13號</span><span class="role-chip">TACTICIAN</span>
+                            </div>
+                            <h3>謝翰燊(里昂)</h3>
+                            <p>安靜內向的小伙子，做事都很緩慢，沉浸在自己的世界裡。</p>
                         </div>
-                        <h3>王玉婷(玉米)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p27.jpg" alt="27號 第 27 號同學(茱茱)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">27號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p14.jpg" alt="14號 第 14 號同學(莉莉)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">14號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>蕭維裕(莉莉)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>周莉亞(茱茱)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p28.jpg" alt="28號 第 28 號同學(小辣椒)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">28號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p26.jpg" alt="26號 第 26 號同學(史派克)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">26號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>王玉婷(玉米)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>柯雅薰(小辣椒)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p29.jpg" alt="29號 第 29 號同學(Ms.P)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">29號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p27.jpg" alt="27號 第 27 號同學(茱茱)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">27號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>周莉亞(茱茱)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>凌采溱(Ms.P)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p30.jpg" alt="30號 第 30 號同學(異芙)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">30號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p28.jpg" alt="28號 第 28 號同學(小辣椒)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">28號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>柯雅薰(小辣椒)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>張睿彤(異芙)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p31.jpg" alt="31號 第 31 號同學(美樂蒂)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">31號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p29.jpg" alt="29號 第 29 號同學(Ms.P)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">29號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>凌采溱(Ms.P)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>許安絜(美樂蒂)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p32.jpg" alt="32號 第 32 號同學(查斯特)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">32號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p30.jpg" alt="30號 第 30 號同學(異芙)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">30號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>張睿彤(異芙)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>陳思佑(查斯特)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p33.jpg" alt="33號 第 33 號同學(沙迪)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">33號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p31.jpg" alt="31號 第 31 號同學(美樂蒂)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">31號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>許安絜(美樂蒂)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>温星語(沙迪)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p34.jpg" alt="34號 第 34 號同學(莫提斯)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">34號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p32.jpg" alt="32號 第 32 號同學(查斯特)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">32號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>陳思佑(查斯特)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>黃婕妘(莫提斯)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p35.jpg" alt="35號 第 35 號同學(碧兒)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">35號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p33.jpg" alt="33號 第 33 號同學(沙迪)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">33號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>温星語(沙迪)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>楊紫筑(碧兒)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p36.jpg" alt="36號 第 36 號同學(歐提斯)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">36號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p34.jpg" alt="34號 第 34 號同學(莫提斯)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">34號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>黃婕妘(莫提斯)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>歐陽薷(歐提斯)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-                <article class="post-card"><img src="p37.jpg" alt="37號 第 37 號同學(曼帝)">
-                    <div class="post-content">
-                        <div class="card-top"><span class="tag">37號</span><span class="role-chip">TEAM MEMBER</span>
+                    </article>
+                    <article class="post-card"><img src="p35.jpg" alt="35號 第 35 號同學(碧兒)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">35號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>楊紫筑(碧兒)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
                         </div>
-                        <h3>賴語潔(曼帝)</h3>
-                        <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
-                    </div>
-                </article>
-            </div>
-        </section>
+                    </article>
+                    <article class="post-card"><img src="p36.jpg" alt="36號 第 36 號同學(歐提斯)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">36號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>歐陽薷(歐提斯)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                        </div>
+                    </article>
+                    <article class="post-card"><img src="p37.jpg" alt="37號 第 37 號同學(曼帝)">
+                        <div class="post-content">
+                            <div class="card-top"><span class="tag">37號</span><span class="role-chip">TEAM MEMBER</span>
+                            </div>
+                            <h3>賴語潔(曼帝)</h3>
+                            <p>這裡可以放同學的個性、興趣、特色或想留下的一句話。</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
-        <section id="contact">
-            <h2 class="section-title">聯絡 901</h2>
-            <div class="glass-panel contact">
-                <p>如果想補充同學介紹、更新照片，或加入更多 901 的班級回憶，都可以再持續更新這個網站。</p>
-                <a class="contact-mail" href="mailto:wy20110203@gmail.com">wy20110203@gmail.com</a>
-            </div>
-        </section>
+            <section id="contact">
+                <h2 class="section-title">聯絡 901</h2>
+                <div class="glass-panel contact">
+                    <p>如果想補充同學介紹、更新照片，或加入更多 901 的班級回憶，都可以再持續更新這個網站。</p>
+                    <a class="contact-mail" href="mailto:wy20110203@gmail.com">wy20110203@gmail.com</a>
+                </div>
+            </section>
 
         </div>
 
@@ -1681,7 +1706,8 @@
                 <h2 class="section-title">任務照片牆</h2>
                 <div class="memory-grid">
                     <article class="memory-card">
-                        <div class="memory-photo"><img src="trip1.jpg" alt="畢業旅行照片 1" onerror="this.style.display='none'"></div>
+                        <div class="memory-photo"><img src="trip1.jpg" alt="畢業旅行照片 1"
+                                onerror="this.style.display='none'"></div>
                         <div class="memory-content">
                             <span class="tag">MISSION 01</span>
                             <h3>出發！901 戰隊集合</h3>
@@ -1689,7 +1715,8 @@
                         </div>
                     </article>
                     <article class="memory-card">
-                        <div class="memory-photo"><img src="trip2.jpg" alt="畢業旅行照片 2" onerror="this.style.display='none'"></div>
+                        <div class="memory-photo"><img src="trip2.jpg" alt="畢業旅行照片 2"
+                                onerror="this.style.display='none'"></div>
                         <div class="memory-content">
                             <span class="tag">MISSION 02</span>
                             <h3>景點攻略成功</h3>
@@ -1697,7 +1724,8 @@
                         </div>
                     </article>
                     <article class="memory-card">
-                        <div class="memory-photo"><img src="trip3.jpg" alt="畢業旅行照片 3" onerror="this.style.display='none'"></div>
+                        <div class="memory-photo"><img src="trip3.jpg" alt="畢業旅行照片 3"
+                                onerror="this.style.display='none'"></div>
                         <div class="memory-content">
                             <span class="tag">MISSION 03</span>
                             <h3>晚上的秘密基地</h3>
@@ -1705,7 +1733,8 @@
                         </div>
                     </article>
                     <article class="memory-card">
-                        <div class="memory-photo"><img src="trip4.jpg" alt="畢業旅行照片 4" onerror="this.style.display='none'"></div>
+                        <div class="memory-photo"><img src="trip4.jpg" alt="畢業旅行照片 4"
+                                onerror="this.style.display='none'"></div>
                         <div class="memory-content">
                             <span class="tag">MISSION 04</span>
                             <h3>最後一張也要帥</h3>
@@ -1713,7 +1742,8 @@
                         </div>
                     </article>
                     <article class="memory-card">
-                        <div class="memory-photo"><img src="volleyball.jpg" alt="班際排球照片" onerror="this.style.display='none'"></div>
+                        <div class="memory-photo"><img src="volleyball.jpg" alt="班際排球照片"
+                                onerror="this.style.display='none'"></div>
                         <div class="memory-content">
                             <span class="tag">VOLLEYBALL</span>
                             <h3>班際排球熱血開戰</h3>
@@ -1721,7 +1751,8 @@
                         </div>
                     </article>
                     <article class="memory-card">
-                        <div class="memory-photo"><img src="trip5.jpg" alt="畢業旅行照片 5" onerror="this.style.display='none'"></div>
+                        <div class="memory-photo"><img src="trip5.jpg" alt="畢業旅行照片 5"
+                                onerror="this.style.display='none'"></div>
                         <div class="memory-content">
                             <span class="tag">BONUS</span>
                             <h3>搞笑名場面</h3>
@@ -1729,7 +1760,8 @@
                         </div>
                     </article>
                     <article class="memory-card">
-                        <div class="memory-photo"><img src="trip6.jpg" alt="畢業旅行照片 6" onerror="this.style.display='none'"></div>
+                        <div class="memory-photo"><img src="trip6.jpg" alt="畢業旅行照片 6"
+                                onerror="this.style.display='none'"></div>
                         <div class="memory-content">
                             <span class="tag">FINAL</span>
                             <h3>901 回憶存檔</h3>
@@ -1795,6 +1827,64 @@
         const classPage = document.getElementById("class-page");
         const missionPage = document.getElementById("mission-page");
 
+        /* ===== 照片防下載保護：右鍵、拖曳、長按、複製禁止 ===== */
+        function protectImagesFromDownload() {
+            const protectedAreas = [
+                ".post-card",
+                ".leader-photo-wrap",
+                ".memory-photo",
+                ".volley-photo-card"
+            ];
+
+            document.querySelectorAll("img").forEach((img) => {
+                img.setAttribute("draggable", "false");
+                img.setAttribute("ondragstart", "return false");
+                img.setAttribute("oncontextmenu", "return false");
+                img.setAttribute("onselectstart", "return false");
+            });
+
+            protectedAreas.forEach((selector) => {
+                document.querySelectorAll(selector).forEach((area) => {
+                    area.addEventListener("contextmenu", (e) => {
+                        e.preventDefault();
+                    });
+
+                    area.addEventListener("dragstart", (e) => {
+                        e.preventDefault();
+                    });
+
+                    area.addEventListener("selectstart", (e) => {
+                        e.preventDefault();
+                    });
+
+                    area.addEventListener("copy", (e) => {
+                        e.preventDefault();
+                    });
+
+                    area.addEventListener("touchstart", () => {
+                        area.dataset.touching = "true";
+                    }, { passive: true });
+
+                    area.addEventListener("touchend", () => {
+                        area.dataset.touching = "false";
+                    }, { passive: true });
+                });
+            });
+
+            document.addEventListener("contextmenu", (e) => {
+                if (
+                    e.target.closest(".post-card") ||
+                    e.target.closest(".leader-photo-wrap") ||
+                    e.target.closest(".memory-photo") ||
+                    e.target.closest(".volley-photo-card")
+                ) {
+                    e.preventDefault();
+                }
+            });
+        }
+
+        protectImagesFromDownload();
+
         function switchPage(page, targetHash = "") {
             const showMission = page === "mission";
             classPage.classList.toggle("active", !showMission);
@@ -1852,16 +1942,16 @@
             carousel.dataset.index = "0";
 
             carousel.innerHTML = `
-                <div class="carousel-track">
-                    <img src="${originalSrc}" alt="${altText} 第一張照片">
-                    <img src="${secondSrc}" alt="${altText} 第二張照片" onerror="this.src='${originalSrc}'">
-                </div>
+    <div class="carousel-track">
+        <img src="${originalSrc}" alt="${altText} 第一張照片" draggable="false" ondragstart="return false" oncontextmenu="return false">
+        <img src="${secondSrc}" alt="${altText} 第二張照片" draggable="false" ondragstart="return false" oncontextmenu="return false" onerror="this.src='${originalSrc}'">
+    </div>
 
-                <div class="carousel-dots">
-                    <span class="carousel-dot active"></span>
-                    <span class="carousel-dot"></span>
-                </div>
-            `;
+    <div class="carousel-dots">
+        <span class="carousel-dot active"></span>
+        <span class="carousel-dot"></span>
+    </div>
+`;
 
             oldImg.replaceWith(carousel);
         });
